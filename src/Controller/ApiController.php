@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 abstract class ApiController extends AbstractFOSRestController
 {
     const URL = 'https://api.punkapi.com/v2/beers/';
-    const NULL_VALUE = null;
 
     protected $guzzleHttpClientService;
 
@@ -40,5 +39,5 @@ abstract class ApiController extends AbstractFOSRestController
     }
 
     abstract protected function setOptions(Request $request);
-    abstract protected function formatResult($data);
+    abstract protected function formatResult($punkResponse);
 }
