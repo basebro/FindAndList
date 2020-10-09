@@ -45,7 +45,7 @@ class GetBeersController extends ApiController
             array_push($arrayData, [
                 'id' => $value['id'],
                 'name' => $value['name'],
-                'description' => $value['description'],
+                'description' => $value['description']
             ]);
         }
 
