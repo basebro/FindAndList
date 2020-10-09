@@ -42,9 +42,13 @@ class GetBeersController extends ApiController
         $arrayData = [];
         $decodedResponse = json_decode($punkResponse, true);
         foreach ($decodedResponse as $value) {
-            array_push($arrayData, ['id' => $value['id'], 'name' => $value['name'], 'description' => $value['description']]);
+            array_push($arrayData, [
+                'id' => $value['id'],
+                'name' => $value['name'],
+                'description' => $value['description']
+            ]);
         }
-        
+
         return $arrayData;
     }
 }
