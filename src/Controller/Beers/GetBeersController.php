@@ -12,9 +12,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class GetBeersController extends ApiController
 {
-    
-    const NULL_VALUE = null;
-    const QUERY_PARAM_NAME = 'food';
     /**
      * @Route("/beers", name="get_beers", methods={"GET"})
      */
@@ -26,7 +23,7 @@ class GetBeersController extends ApiController
     protected function setOptions(Request $request)
     {
         $options = [];
-        $queryParams = $request->query->get(self::QUERY_PARAM_NAME, self::NULL_VALUE);
+        $queryParams = $request->query->get(parent::QUERY_PARAM_NAME, parent::NULL_VALUE);
         if (isset($queryParams)) {
             if (!is_string($queryParams)) {
                 throw new ApiInvalidRequestException('Invalid parameter');
