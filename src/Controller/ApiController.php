@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 abstract class ApiController extends AbstractFOSRestController
 {
     const URL = 'https://api.punkapi.com/v2/beers/';
+    const NULL_VALUE = null;
+    const QUERY_PARAM_NAME = 'food';
 
     protected $guzzleHttpClientService;
 
